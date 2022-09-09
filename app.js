@@ -2,6 +2,8 @@
 const express = require("express")
 const app = express();
 
+const mathjs = require("mathjs")
+
 app.use(express.json());
 
 app.post('/calculate', function(req, res){
@@ -10,13 +12,16 @@ app.post('/calculate', function(req, res){
   const operation = req.body.operation;
 
   if(operation == 'addition') {
-    res.json({ result:  first_number + second_number });
+    const result = eval(first_number+second_number)
+    res.json({ result });
   }
   if(operation == 'subtraction') {
-    res.json({ result:  first_number - second_number });
+    const result = eval(first_number - second_number)
+    res.json({ result });
   }
   if(operation == 'multiplication') {
-    res.json({ result:  first_number * second_number });
+    const result = eval(first_number * second_number)
+    res.json({ result  });
   }
   res.end()
 });
