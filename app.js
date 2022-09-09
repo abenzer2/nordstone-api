@@ -9,13 +9,13 @@ app.post('/calculate', function(req, res){
   const second_number = req.body.second_number;
   const operation = req.body.operation;
 
-  if(operation == 'add') {
+  if(operation == 'addition') {
     res.json({ result:  first_number + second_number });
   }
-  if(operation == 'subtract') {
+  if(operation == 'subtraction') {
     res.json({ result:  first_number - second_number });
   }
-  if(operation == 'multiply') {
+  if(operation == 'multiplication') {
     res.json({ result:  first_number * second_number });
   }
   res.end()
