@@ -2,8 +2,6 @@
 const express = require("express")
 const app = express();
 
-const mathjs = require("mathjs")
-
 app.use(express.json());
 
 app.post('/calculate', function(req, res){
